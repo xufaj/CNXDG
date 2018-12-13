@@ -76,7 +76,16 @@ client.user.setGame(`*invite `,"http://twitch.tv/Death Shop")
 client.user.setStatus("dnd")
 });
 	
-	
+	client.on("guildMemberAdd", member => {
+  member.createDM().then(function (channel) {
+  return channel.send(`:rose:  ولكم نورت السيرفر:rose: 
+:crown: ${member}:crown:  
+انت العضو رقم ${member.guild.memberCount} `) 
+}).catch(console.error)
+})
+
+
+
 	
 	
 client.login(process.env.BOT_TOKEN);
